@@ -611,3 +611,92 @@ button {
     object-fit:cover;
     display:block;
 }
+@media (max-width: 850px){
+
+    .hero{
+        padding:110px 16px 60px;
+    }
+
+    .hero-logo{
+        width:95px;
+        height:95px;
+        margin-bottom:24px;
+    }
+
+    .hero-logo span{
+        font-size:52px;
+    }
+
+    .hero h1{
+        font-size:58px;
+        letter-spacing:9px;
+    }
+
+    .hero-solution{
+        font-size:22px;
+        letter-spacing:9px;
+    }
+
+    .hero-line{
+        margin:28px auto;
+    }
+
+    .hero-tagline{
+        font-size:13px;
+        letter-spacing:4px;
+        line-height:1.8;
+        margin-bottom:50px;
+    }
+
+    .hero-expertise-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-expertise{
+        padding:40px 24px;
+    }
+
+    .hero-expertise + .hero-expertise{
+        border-left:none;
+        border-top:1px solid rgba(255,255,255,0.16);
+    }
+
+    .hero-expertise h2{
+        font-size:21px;
+    }
+
+    .hero-expertise p{
+        font-size:15px;
+    }
+
+    .hero-signature{
+        gap:14px;
+        margin-top:38px;
+    }
+
+    .hero-signature span{
+        width:45px;
+    }
+
+    .hero-signature p{
+        font-size:11px;
+        letter-spacing:3px;
+    }
+}
+
+@media (max-width: 420px){
+
+    .hero h1{
+        font-size:46px;
+        letter-spacing:6px;
+    }
+
+    .hero-solution{
+        font-size:18px;
+        letter-spacing:7px;
+    }
+
+    .hero-tagline{
+        letter-spacing:3px;
+    }
+}
