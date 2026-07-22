@@ -206,6 +206,73 @@ button {
     text-transform:uppercase;
     margin-bottom:80px;
 }
+.hero-expertise-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    max-width:1200px;
+    margin:0 auto;
+    border-top:1px solid rgba(255,255,255,0.16);
+    border-bottom:1px solid rgba(255,255,255,0.16);
+}
+
+.hero-expertise{
+    padding:45px 40px;
+    text-align:center;
+}
+
+.hero-expertise + .hero-expertise{
+    border-left:1px solid rgba(255,255,255,0.16);
+}
+
+.hero-icon{
+    color:#c79a3b;
+    font-size:54px;
+    line-height:1;
+    margin-bottom:24px;
+}
+
+.hero-expertise h2{
+    color:white;
+    font-size:24px;
+    font-weight:500;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.hero-small-line{
+    width:45px;
+    height:2px;
+    background:#c79a3b;
+    margin:20px auto;
+}
+
+.hero-expertise p{
+    color:#b9b9b9;
+    font-size:16px;
+    line-height:1.7;
+    max-width:320px;
+    margin:0 auto;
+}
+
+.hero-signature{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:25px;
+    margin-top:50px;
+}
+
+.hero-signature span{
+    width:150px;
+    height:1px;
+    background:#c79a3b;
+}
+
+.hero-signature p{
+    color:#c79a3b;
+    text-transform:uppercase;
+    letter-spacing:6px;
+    font-size:13px;
 }
 
 .section-heading {
