@@ -138,13 +138,19 @@ a {
 
 .hero {
   width: 100%;
+  min-height: calc(100svh - 64px);
   background: #000;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-background {
   display: block;
-  width: min(100%, 1600px);
+  width: 100%;
+  max-width: 1600px;
+  max-height: calc(100svh - 64px);
   height: auto;
   margin: 0 auto;
   object-fit: contain;
@@ -359,5 +365,13 @@ a {
 
   .footer-content {
     flex-direction: column;
+  }
+@media (min-width: 851px) {
+  .hero {
+    min-height: calc(100vh - 72px);
+  }
+
+  .hero-background {
+    max-height: calc(100vh - 72px);
   }
 }
