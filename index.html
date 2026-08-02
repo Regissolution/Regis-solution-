@@ -11,7 +11,7 @@
     content="Régis Solution — Ébénisterie sur mesure, expertise minière et rénovation."
   />
 
-<link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
@@ -41,7 +41,7 @@
       </button>
 
       <nav class="nav-menu" id="nav-menu">
-        <a href="#expertises">Expertise</a>
+        <a href="#expertises">Expertises</a>
         <a href="#projets">Projets</a>
         <a href="#apropos">À propos</a>
         <a href="#contact">Contact</a>
@@ -52,15 +52,44 @@
 
   <main>
 
+    <!-- ACCUEIL -->
     <section class="hero" id="accueil">
+
+      <!-- Version ordinateur -->
       <img
-        class="hero-background"
+        class="hero-background hero-desktop"
         src="52FAEEB4-BEB7-4DF0-BC50-0CCCBF367A88.png"
-        alt="Régis Solution — Ébénisterie, expertise minière et rénovation"
+        alt="Régis Solution"
       />
+
+      <!-- Version iPhone -->
+      <div class="hero-mobile">
+
+        <div class="mobile-logo">R</div>
+
+        <h1>RÉGIS</h1>
+
+        <div class="mobile-solution">
+          SOLUTION
+        </div>
+
+        <div class="mobile-line"></div>
+
+        <p class="mobile-tagline">
+          EXPERTISE · RIGUEUR · RÉSULTATS
+        </p>
+
+        <a href="#expertises" class="hero-button">
+          Découvrir nos expertises
+        </a>
+
+      </div>
+
     </section>
 
+    <!-- EXPERTISES -->
     <section class="section" id="expertises">
+
       <div class="container">
 
         <div class="section-heading">
@@ -71,35 +100,47 @@
         <div class="card-grid">
 
           <article class="card">
+            <div class="card-number">01</div>
+
             <h3>Ébénisterie</h3>
+
             <p>
               Mobilier, armoires et agencements conçus et fabriqués sur mesure.
-              Du design à la réalisation, chaque pièce est unique.
+              Du design à la réalisation, chaque pièce est pensée avec précision.
             </p>
           </article>
 
           <article class="card">
+            <div class="card-number">02</div>
+
             <h3>Expertise minière</h3>
+
             <p>
-              Gestion de projets miniers, supervision des équipes et
-              coordination des opérations jusqu’à la mise en production.
+              Gestion de projets, supervision des équipes et coordination
+              des opérations jusqu’à la mise en production.
             </p>
           </article>
 
           <article class="card">
+            <div class="card-number">03</div>
+
             <h3>Rénovation</h3>
+
             <p>
-              Projets personnalisés intégrant la charpenterie et la menuiserie,
-              de la structure jusqu’aux finitions.
+              Charpenterie, menuiserie, structure et finitions pour des projets
+              de rénovation adaptés à vos besoins.
             </p>
           </article>
 
         </div>
 
       </div>
+
     </section>
 
+    <!-- PROJETS -->
     <section class="section section-dark" id="projets">
+
       <div class="container">
 
         <div class="section-heading">
@@ -111,7 +152,9 @@
 
           <article class="project-card">
             <span>01</span>
+
             <h3>Mobilier sur mesure</h3>
+
             <p>
               Vanités, armoires, meubles et agencements personnalisés.
             </p>
@@ -119,15 +162,20 @@
 
           <article class="project-card">
             <span>02</span>
+
             <h3>Gestion minière</h3>
+
             <p>
-              Planification, supervision et coordination des équipes sur le terrain.
+              Planification, supervision et coordination des équipes
+              sur le terrain.
             </p>
           </article>
 
           <article class="project-card">
             <span>03</span>
+
             <h3>Rénovation résidentielle</h3>
+
             <p>
               Travaux structuraux, menuiserie et finitions personnalisées.
             </p>
@@ -136,56 +184,84 @@
         </div>
 
       </div>
+
     </section>
 
+    <!-- À PROPOS -->
     <section class="section" id="apropos">
+
       <div class="container about-grid">
 
         <div>
           <p class="eyebrow">À propos</p>
-          <h2>Une expertise bâtie sur l’expérience</h2>
+
+          <h2>
+            Une expertise bâtie sur l’expérience
+          </h2>
         </div>
 
         <div class="about-text">
+
           <p>
-            Régis Solution met à profit une expérience diversifiée en
-            ébénisterie, rénovation, charpenterie-menuiserie et gestion
-            de projets miniers.
+            Régis Solution met à profit une expérience diversifiée
+            en ébénisterie, rénovation, charpenterie-menuiserie
+            et gestion de projets miniers.
           </p>
 
           <p>
-            Chaque mandat est réalisé avec méthode, précision et engagement.
+            Chaque mandat est réalisé avec méthode, précision
+            et engagement.
           </p>
+
         </div>
 
       </div>
+
     </section>
 
+    <!-- CONTACT -->
     <section class="section contact-section" id="contact">
+
       <div class="container contact-content">
 
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>Discutons de votre projet</h2>
+
+          <h2>
+            Discutons de votre projet
+          </h2>
         </div>
 
-        <a class="contact-button" href="mailto:info@regissolution.com">
+        <a
+          class="contact-button"
+          href="mailto:info@regissolution.com"
+        >
           Écrire à Régis Solution
         </a>
 
       </div>
+
     </section>
 
   </main>
 
   <footer class="site-footer">
+
     <div class="container footer-content">
-      <p>© 2026 Régis Solution. Tous droits réservés.</p>
-      <a href="#accueil">Retour en haut</a>
+
+      <p>
+        © 2026 Régis Solution. Tous droits réservés.
+      </p>
+
+      <a href="#accueil">
+        Retour en haut
+      </a>
+
     </div>
+
   </footer>
 
-  <script src="style.js"></script>
+  <script src="./style.js"></script>
 
 </body>
 </html>
