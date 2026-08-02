@@ -767,3 +767,277 @@ button {
     width: 40px;
   }
 }
+/* =====================================================
+   IDENTITÉ RÉGIS SOLUTION
+   Monogramme géométrique doré
+===================================================== */
+
+:root {
+  --regis-gold: #c9973f;
+  --regis-gold-light: #e2b45e;
+}
+
+/* Base du monogramme */
+
+.rs-mark {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.rs-mark span {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+}
+
+/*
+  Trois traits horizontaux créent la partie gauche
+  du monogramme, inspirée du R géométrique.
+*/
+
+.rs-line {
+  left: 4%;
+  height: 10%;
+  background: linear-gradient(
+    90deg,
+    var(--regis-gold),
+    var(--regis-gold-light)
+  );
+  transform: skewX(42deg);
+  transform-origin: left center;
+}
+
+.rs-line-1 {
+  top: 15%;
+  width: 55%;
+}
+
+.rs-line-2 {
+  top: 38%;
+  width: 47%;
+}
+
+.rs-line-3 {
+  top: 61%;
+  width: 39%;
+}
+
+/* Partie arrondie du R */
+
+.rs-curve {
+  top: 13%;
+  right: 8%;
+
+  width: 58%;
+  height: 52%;
+
+  border-top: 9px solid var(--regis-gold);
+  border-right: 9px solid var(--regis-gold);
+  border-bottom: 9px solid var(--regis-gold);
+
+  border-radius: 0 50% 50% 0;
+}
+
+/* Jambe diagonale */
+
+.rs-leg {
+  left: 47%;
+  top: 53%;
+
+  width: 11%;
+  height: 48%;
+
+  background: linear-gradient(
+    180deg,
+    var(--regis-gold-light),
+    var(--regis-gold)
+  );
+
+  transform: rotate(-42deg);
+  transform-origin: top center;
+}
+
+
+/* =====================================================
+   PETIT LOGO — HEADER
+===================================================== */
+
+.rs-mark-small {
+  width: 52px;
+  height: 52px;
+}
+
+.rs-mark-small .rs-curve {
+  border-width: 5px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-name {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 9px;
+  white-space: nowrap;
+}
+
+.brand-name strong {
+  color: #fff;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+}
+
+.brand-name small {
+  margin: 0;
+
+  color: var(--regis-gold);
+
+  font-size: 0.78rem;
+  font-weight: 400;
+
+  letter-spacing: 0.22em;
+}
+
+
+/* =====================================================
+   GRAND LOGO — CENTRE DE L'ACCUEIL
+===================================================== */
+
+.rs-mark-large {
+  width: 125px;
+  height: 125px;
+  margin-bottom: 30px;
+}
+
+.rs-mark-large .rs-curve {
+  border-width: 11px;
+}
+
+.hero-mobile h1 {
+  margin: 0 !important;
+
+  color: #fff !important;
+
+  font-size: clamp(3.3rem, 14vw, 5.2rem) !important;
+  font-weight: 600 !important;
+
+  line-height: 0.95 !important;
+
+  letter-spacing: 0.16em !important;
+  padding-left: 0.16em !important;
+}
+
+.mobile-solution {
+  margin-top: 13px !important;
+
+  color: var(--regis-gold) !important;
+
+  font-size: clamp(1.1rem, 5.5vw, 1.65rem) !important;
+
+  font-weight: 400 !important;
+
+  letter-spacing: 0.42em !important;
+  padding-left: 0.42em !important;
+}
+
+.mobile-line {
+  width: 55px !important;
+  height: 2px !important;
+
+  margin: 25px 0 20px !important;
+
+  background: var(--regis-gold) !important;
+}
+
+
+/* =====================================================
+   IPHONE
+===================================================== */
+
+@media screen and (max-width: 850px) {
+
+  .rs-mark-small {
+    width: 44px;
+    height: 44px;
+  }
+
+  .rs-mark-small .rs-curve {
+    border-width: 4px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-name {
+    gap: 7px;
+  }
+
+  .brand-name strong {
+    font-size: 0.88rem;
+    letter-spacing: 0.15em;
+  }
+
+  .brand-name small {
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+  }
+
+  .rs-mark-large {
+    width: 105px;
+    height: 105px;
+
+    margin-bottom: 27px;
+  }
+
+  .rs-mark-large .rs-curve {
+    border-width: 9px;
+  }
+
+}
+
+
+/* =====================================================
+   PETITS IPHONE
+===================================================== */
+
+@media screen and (max-width: 390px) {
+
+  .rs-mark-small {
+    width: 39px;
+    height: 39px;
+  }
+
+  .brand-name strong {
+    font-size: 0.8rem;
+  }
+
+  .brand-name small {
+    font-size: 0.59rem;
+  }
+
+  .rs-mark-large {
+    width: 92px;
+    height: 92px;
+  }
+
+  .rs-mark-large .rs-curve {
+    border-width: 8px;
+  }
+
+  .hero-mobile h1 {
+    font-size: 3rem !important;
+  }
+
+  .mobile-solution {
+    font-size: 1rem !important;
+  }
+
+}
