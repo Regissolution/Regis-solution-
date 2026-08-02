@@ -669,3 +669,101 @@ button {
     min-height: auto !important;
   }
 }
+
+/* LOGO RÉGIS — MONOGRAMME PREMIUM */
+
+.mobile-logo {
+  position: relative !important;
+
+  width: 92px !important;
+  height: 92px !important;
+
+  margin: 0 0 28px !important;
+
+  border: none !important;
+  background: transparent !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  transform: none !important;
+}
+
+.mobile-logo::before,
+.mobile-logo::after {
+  content: "";
+  position: absolute;
+
+  width: 62px;
+  height: 62px;
+
+  border: 3px solid #c9973f;
+
+  transform: rotate(45deg);
+}
+
+.mobile-logo::before {
+  opacity: 0.95;
+}
+
+.mobile-logo::after {
+  width: 46px;
+  height: 46px;
+
+  border-color: rgba(201, 151, 63, 0.55);
+}
+
+.logo-r {
+  position: relative;
+  z-index: 2;
+
+  color: #e2b45e;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.3rem;
+  font-weight: 700;
+  font-style: italic;
+
+  line-height: 1;
+
+  transform: translateX(-2px);
+}
+
+.logo-slash {
+  position: absolute;
+  z-index: 3;
+
+  width: 44px;
+  height: 3px;
+
+  background: #c9973f;
+
+  transform: rotate(-35deg) translate(16px, 18px);
+  transform-origin: center;
+}
+
+@media (max-width: 390px) {
+  .mobile-logo {
+    width: 82px !important;
+    height: 82px !important;
+  }
+
+  .mobile-logo::before {
+    width: 56px;
+    height: 56px;
+  }
+
+  .mobile-logo::after {
+    width: 42px;
+    height: 42px;
+  }
+
+  .logo-r {
+    font-size: 3rem;
+  }
+
+  .logo-slash {
+    width: 40px;
+  }
+}
