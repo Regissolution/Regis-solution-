@@ -1,8 +1,8 @@
 :root {
   --black: #050505;
-  --black-2: #0a0a0a;
+  --black-soft: #0b0b0b;
   --gold: #c9973f;
-  --gold-light: #e2bd73;
+  --gold-light: #e3bb6c;
   --white: #ffffff;
   --gray: #b8b8b8;
   --line: rgba(255, 255, 255, 0.12);
@@ -29,11 +29,9 @@ body {
   overflow-x: hidden;
 }
 
-main,
-section,
-header,
-footer {
-  background: var(--black);
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 img {
@@ -41,9 +39,8 @@ img {
   max-width: 100%;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+button {
+  font: inherit;
 }
 
 .container {
@@ -138,33 +135,29 @@ a {
 
 .hero {
   width: 100%;
-  min-height: calc(100svh - 64px);
   background: #000;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.hero-background {
+.hero-desktop {
   display: block;
-  width: 100%;
-  max-width: 1600px;
-  max-height: calc(100svh - 64px);
+  width: min(100%, 1600px);
   height: auto;
   margin: 0 auto;
-  object-fit: contain;
-  object-position: center;
+}
+
+.hero-mobile {
+  display: none;
 }
 
 /* SECTIONS */
 
 .section {
   padding: 88px 0;
-  background: var(--black-2);
+  background: var(--black-soft);
 }
 
-.section:nth-of-type(even) {
+.section-dark {
   background: var(--black);
 }
 
@@ -191,6 +184,8 @@ a {
   font-weight: 500;
 }
 
+/* CARTES */
+
 .card-grid,
 .project-grid {
   display: grid;
@@ -206,11 +201,27 @@ a {
   border: 1px solid var(--line);
 }
 
+.card-number {
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+}
+
 .card h3,
 .project-card h3 {
   margin-bottom: 14px;
   font-size: 1.25rem;
   font-weight: 500;
+}
+
+.card h3::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  margin-top: 14px;
+  background: var(--gold);
 }
 
 .card p,
@@ -227,7 +238,7 @@ a {
   letter-spacing: 0.16em;
 }
 
-/* ABOUT */
+/* À PROPOS */
 
 .about-grid {
   display: grid;
@@ -241,6 +252,16 @@ a {
 }
 
 /* CONTACT */
+
+.contact-section {
+  background:
+    radial-gradient(
+      circle at right,
+      rgba(201, 151, 63, 0.09),
+      transparent 35%
+    ),
+    #080808;
+}
 
 .contact-content {
   display: flex;
@@ -275,9 +296,25 @@ a {
   gap: 20px;
 }
 
-/* MOBILE */
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TABLETTE ET MOBILE */
 
 @media (max-width: 850px) {
+
   .header-inner {
     min-height: 64px;
   }
@@ -309,10 +346,80 @@ a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   }
 
-  .hero-background {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+  /* On cache la grande image sur iPhone */
+  .hero-desktop {
+    display: none;
+  }
+
+  /* Accueil spécial mobile */
+  .hero-mobile {
+    min-height: calc(100svh - 64px);
+    padding: 60px 24px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(201, 151, 63, 0.10),
+        transparent 42%
+      ),
+      #000;
+  }
+
+  .mobile-logo {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 28px;
+    border: 3px solid var(--gold);
+    color: var(--gold);
+    display: grid;
+    place-items: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    transform: rotate(-6deg);
+  }
+
+  .hero-mobile h1 {
+    margin: 0;
+    font-size: clamp(3rem, 16vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+  }
+
+  .mobile-solution {
+    margin-top: 12px;
+    color: var(--gold);
+    font-size: clamp(1.25rem, 7vw, 2rem);
+    letter-spacing: 0.42em;
+    padding-left: 0.42em;
+  }
+
+  .mobile-line {
+    width: 60px;
+    height: 2px;
+    margin: 30px 0 22px;
+    background: var(--gold);
+  }
+
+  .mobile-tagline {
+    color: #d7d7d7;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+  }
+
+  .hero-button {
+    display: inline-block;
+    margin-top: 34px;
+    padding: 14px 22px;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
   }
 
   .card-grid,
@@ -329,9 +436,13 @@ a {
     flex-direction: column;
     align-items: flex-start;
   }
+
 }
 
+/* PETITS IPHONE */
+
 @media (max-width: 560px) {
+
   .container,
   .header-inner {
     width: calc(100% - 24px);
@@ -358,20 +469,75 @@ a {
     margin-bottom: 34px;
   }
 
+  .section-heading h2,
+  .about-grid h2,
+  .contact-content h2 {
+    font-size: 2rem;
+  }
+
   .card,
   .project-card {
-    padding: 24px 20px;
+    padding: 26px 22px;
+  }
+
+  .hero-mobile {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .mobile-logo {
+    width: 76px;
+    height: 76px;
+    font-size: 2rem;
+  }
+
+  .hero-mobile h1 {
+    font-size: 3.2rem;
+  }
+
+  .mobile-solution {
+    font-size: 1.2rem;
   }
 
   .footer-content {
     flex-direction: column;
   }
-@media (min-width: 851px) {
-  .hero {
-    min-height: calc(100vh - 72px);
+
+}
+
+/* TRÈS PETITS ÉCRANS */
+
+@media (max-width: 390px) {
+
+  .hero-mobile h1 {
+    font-size: 2.8rem;
+    letter-spacing: 0.1em;
   }
 
-  .hero-background {
-    max-height: calc(100vh - 72px);
+  .mobile-solution {
+    font-size: 1rem;
+    letter-spacing: 0.32em;
+    padding-left: 0.32em;
   }
+
+  .mobile-tagline {
+    font-size: 0.65rem;
+    letter-spacing: 0.13em;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
 }
