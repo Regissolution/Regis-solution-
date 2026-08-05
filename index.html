@@ -1,408 +1,896 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Régis Solution</title>
 
-  <meta
-    name="description"
-    content="Régis Solution — Ébénisterie sur mesure, expertise minière et rénovation."
-  />
+  <style>
 
-  <link rel="stylesheet" href="./style.css" />
+    /* ==============================
+       BASE
+    ============================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #050505;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+
+    /* ==============================
+       HEADER
+    ============================== */
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      padding: 28px 6%;
+
+      background: rgba(5, 5, 5, 0.94);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+
+    /* Logo texte seulement */
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand-regis {
+      color: #ffffff;
+
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 6px;
+    }
+
+    .brand-solution {
+      color: #d7a23b;
+
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 5px;
+    }
+
+
+    /* Navigation ordinateur */
+
+    .nav {
+      display: flex;
+      gap: 38px;
+    }
+
+    .nav a {
+      text-decoration: none;
+
+      color: #eeeeee;
+
+      font-size: 12px;
+      letter-spacing: 2px;
+
+      transition: color 0.25s ease;
+    }
+
+    .nav a:hover {
+      color: #d7a23b;
+    }
+
+
+    /* Hamburger */
+
+    .menu-toggle {
+      display: none;
+
+      width: 42px;
+      height: 36px;
+
+      border: none;
+      background: transparent;
+
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+
+      width: 32px;
+      height: 2px;
+
+      margin: 7px 0;
+
+      background: #ffffff;
+    }
+
+
+    /* ==============================
+       HERO / ACCUEIL
+    ============================== */
+
+    .hero {
+      min-height: 100svh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 150px 25px 90px;
+
+      position: relative;
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(183, 124, 24, 0.13) 0%,
+          rgba(183, 124, 24, 0.05) 25%,
+          rgba(5, 5, 5, 0) 55%
+        ),
+        #050505;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+
+    /* RÉGIS central */
+
+    .hero-title {
+      color: #ffffff;
+
+      font-size: clamp(64px, 10vw, 120px);
+      font-weight: 700;
+
+      letter-spacing: 13px;
+
+      line-height: 1;
+    }
+
+
+    /* SOLUTION central */
+
+    .hero-subtitle {
+      margin-top: 28px;
+
+      color: #d7a23b;
+
+      font-size: clamp(20px, 3vw, 32px);
+      font-weight: 400;
+
+      letter-spacing: 16px;
+
+      padding-left: 16px;
+    }
+
+
+    /* Petite ligne dorée */
+
+    .gold-line {
+      width: 105px;
+      height: 3px;
+
+      margin: 48px auto 38px;
+
+      background: #d7a23b;
+    }
+
+
+    /* Slogan */
+
+    .tagline {
+      color: #e4e4e4;
+
+      font-size: 15px;
+      font-weight: 300;
+
+      letter-spacing: 5px;
+
+      line-height: 1.8;
+    }
+
+
+    /* Bouton */
+
+    .hero-button {
+      display: inline-block;
+
+      margin-top: 50px;
+
+      padding: 19px 34px;
+
+      border: 1px solid #d7a23b;
+
+      color: #d7a23b;
+
+      text-decoration: none;
+
+      font-size: 13px;
+      letter-spacing: 3px;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
+    }
+
+    .hero-button:hover {
+      background: #d7a23b;
+      color: #050505;
+    }
+
+
+    /* ==============================
+       EXPERTISES
+    ============================== */
+
+    .expertises {
+      padding: 100px 6%;
+
+      background: #080808;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+
+      color: #ffffff;
+
+      font-size: 32px;
+      font-weight: 500;
+
+      letter-spacing: 7px;
+
+      margin-bottom: 70px;
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 30px;
+    }
+
+    .expertise-card {
+      text-align: center;
+
+      padding: 45px 30px;
+
+      border: 1px solid rgba(215, 162, 59, 0.22);
+
+      background: #0a0a0a;
+    }
+
+    .expertise-card h3 {
+      color: #ffffff;
+
+      font-size: 18px;
+      font-weight: 500;
+
+      letter-spacing: 4px;
+
+      line-height: 1.6;
+    }
+
+    .card-line {
+      width: 45px;
+      height: 2px;
+
+      background: #d7a23b;
+
+      margin: 24px auto;
+    }
+
+    .expertise-card p {
+      color: #bdbdbd;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+    }
+
+
+    /* ==============================
+       RÉALISATIONS
+    ============================== */
+
+    .realisations {
+      padding: 100px 6%;
+
+      background: #050505;
+    }
+
+    .realisations p {
+      max-width: 750px;
+
+      margin: 0 auto;
+
+      text-align: center;
+
+      color: #bbbbbb;
+
+      line-height: 1.8;
+
+      font-size: 15px;
+    }
+
+
+    /* ==============================
+       À PROPOS
+    ============================== */
+
+    .apropos {
+      padding: 100px 6%;
+
+      background: #080808;
+    }
+
+    .apropos-content {
+      max-width: 800px;
+
+      margin: 0 auto;
+
+      text-align: center;
+    }
+
+    .apropos-content p {
+      color: #bbbbbb;
+
+      font-size: 15px;
+
+      line-height: 1.9;
+    }
+
+
+    /* ==============================
+       CONTACT
+    ============================== */
+
+    .contact {
+      padding: 100px 6%;
+
+      text-align: center;
+
+      background: #050505;
+    }
+
+    .contact p {
+      color: #bbbbbb;
+
+      margin-bottom: 35px;
+
+      line-height: 1.8;
+    }
+
+    .contact-button {
+      display: inline-block;
+
+      padding: 18px 32px;
+
+      border: 1px solid #d7a23b;
+
+      color: #d7a23b;
+
+      text-decoration: none;
+
+      letter-spacing: 3px;
+
+      font-size: 13px;
+    }
+
+
+    /* ==============================
+       FOOTER
+    ============================== */
+
+    footer {
+      padding: 35px 20px;
+
+      text-align: center;
+
+      background: #030303;
+
+      border-top: 1px solid rgba(215, 162, 59, 0.2);
+
+      color: #777777;
+
+      font-size: 12px;
+
+      letter-spacing: 2px;
+    }
+
+
+    /* ==============================
+       VERSION MOBILE / IPHONE
+    ============================== */
+
+    @media (max-width: 768px) {
+
+      .site-header {
+        padding: 22px 18px;
+      }
+
+      .header-inner {
+        align-items: flex-start;
+      }
+
+
+      /* RÉGIS SOLUTION en haut */
+
+      .brand {
+        gap: 10px;
+      }
+
+      .brand-regis {
+        font-size: 18px;
+        letter-spacing: 5px;
+      }
+
+      .brand-solution {
+        font-size: 11px;
+        letter-spacing: 3px;
+      }
+
+
+      /* Menu */
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav {
+        display: none;
+
+        position: absolute;
+
+        top: 82px;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        background: #090909;
+
+        border-top: 1px solid #171717;
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .nav a {
+        padding: 19px 22px;
+
+        border-bottom: 1px solid #171717;
+
+        font-size: 13px;
+      }
+
+
+      /* Accueil */
+
+      .hero {
+        min-height: 100svh;
+
+        padding: 150px 20px 80px;
+      }
+
+      .hero-content {
+        transform: translateY(20px);
+      }
+
+      .hero-title {
+        font-size: 58px;
+
+        letter-spacing: 10px;
+
+        padding-left: 10px;
+      }
+
+      .hero-subtitle {
+        margin-top: 24px;
+
+        font-size: 20px;
+
+        letter-spacing: 11px;
+
+        padding-left: 11px;
+      }
+
+      .gold-line {
+        width: 75px;
+
+        margin-top: 45px;
+        margin-bottom: 34px;
+      }
+
+      .tagline {
+        font-size: 12px;
+
+        letter-spacing: 3px;
+
+        white-space: nowrap;
+      }
+
+      .hero-button {
+        margin-top: 45px;
+
+        padding: 17px 23px;
+
+        font-size: 12px;
+
+        letter-spacing: 2px;
+      }
+
+
+      /* Sections */
+
+      .expertises,
+      .realisations,
+      .apropos,
+      .contact {
+        padding: 80px 20px;
+      }
+
+      .section-title {
+        font-size: 24px;
+
+        letter-spacing: 5px;
+
+        margin-bottom: 50px;
+      }
+
+      .expertise-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+      }
+
+    }
+
+
+    /* Très petits iPhone */
+
+    @media (max-width: 390px) {
+
+      .brand-regis {
+        font-size: 16px;
+        letter-spacing: 4px;
+      }
+
+      .brand-solution {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+      .hero-title {
+        font-size: 50px;
+        letter-spacing: 8px;
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+        letter-spacing: 8px;
+      }
+
+      .tagline {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-  <a href="#accueil" class="logo-regis" aria-label="Régis Solution">
-  <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="goldLogo" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#F3CA69"/>
-        <stop offset="45%" stop-color="#DDA53A"/>
-        <stop offset="100%" stop-color="#B77C18"/>
-      </linearGradient>
-    </defs>
 
-    <!-- Barre supérieure -->
-    <path
-      d="M30 30
-         H132
-         C174 30 194 52 194 87
-         C194 119 174 139 145 143
-         L126 116
-         C145 114 157 104 157 86
-         C157 68 145 59 126 59
-         H30 Z"
-      fill="url(#goldLogo)"
-    />
+  <!-- ==============================
+       HEADER
+  ============================== -->
 
-    <!-- Partie gauche -->
-    <path
-      d="M30 78
-         H115
-         L102 108
-         H62
-         V155
-         H30 Z"
-      fill="url(#goldLogo)"
-    />
+  <header class="site-header">
 
-    <!-- Jambe du R -->
-    <path
-      d="M87 113
-         H116
-         L184 190
-         H145
-         L96 139
-         H87 Z"
-      fill="url(#goldLogo)"
-    />
-  </svg>
-</a>
+    <div class="header-inner">
 
-        <span class="brand-name">
-          <strong>RÉGIS</strong>
-          <small>SOLUTION</small>
+      <a href="#accueil" class="brand">
+
+        <span class="brand-regis">
+          RÉGIS
+        </span>
+
+        <span class="brand-solution">
+          SOLUTION
         </span>
 
       </a>
 
-      <button
-        class="menu-toggle"
-        id="menu-toggle"
-        type="button"
-        aria-label="Ouvrir le menu"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
 
-      <nav class="nav-menu" id="nav-menu">
-        <a href="#expertises">Expertises</a>
-        <a href="#projets">Projets</a>
-        <a href="#apropos">À propos</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav" id="navMenu">
+
+        <a href="#expertises">EXPERTISES</a>
+
+        <a href="#realisations">RÉALISATIONS</a>
+
+        <a href="#apropos">À PROPOS</a>
+
+        <a href="#contact">CONTACT</a>
+
       </nav>
 
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Ouvrir le menu"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
     </div>
+
   </header>
-<a href="#accueil" class="logo-regis-texte">
-  <span class="regis">RÉGIS</span>
-  <span class="solution">SOLUTION</span>
-</a>
+
+
+
+  <!-- ==============================
+       ACCUEIL
+  ============================== -->
+
   <main>
 
-    <!-- ACCUEIL -->
-    <section class="hero" id="accueil">
+    <section
+      class="hero"
+      id="accueil"
+    >
 
-      <div class="hero-mobile">
-<div class="rs2-logo rs2-large" aria-hidden="true">
-  <span class="rs2-top"></span>
-  <span class="rs2-middle"></span>
-  <span class="rs2-leg"></span>
-</div>
+      <div class="hero-content">
 
-        <h1>RÉGIS</h1>
 
-        <div class="mobile-solution">
+        <!-- PAS DE LOGO R ICI -->
+
+
+        <h1 class="hero-title">
+          RÉGIS
+        </h1>
+
+
+        <div class="hero-subtitle">
           SOLUTION
         </div>
 
-        <div class="mobile-line"></div>
 
-        <p class="mobile-tagline">
+        <div class="gold-line"></div>
+
+
+        <p class="tagline">
           EXPERTISE · RIGUEUR · RÉSULTATS
         </p>
 
-        <a href="#expertises" class="hero-button">
-          Découvrir nos expertises
-        </a>
-
-      </div>
-
-    </section>
-
-    <!-- EXPERTISES -->
-    <section class="section" id="expertises">
-
-      <div class="container">
-
-        <div class="section-heading">
-          <p>Nos expertises</p>
-          <h2>Un savoir-faire diversifié</h2>
-        </div>
-
-        <div class="card-grid">
-
-          <article class="card card-with-gallery">
-  <div class="card-number">01</div>
-
-  <h3>Ébénisterie</h3>
-
-  <p>
-    Mobilier, armoires et agencements conçus et fabriqués sur mesure.
-    Du design à la réalisation, chaque pièce est pensée avec précision.
-  </p>
-
-  <a href="#galerie-ebenisterie" class="gallery-button">
-    Voir les réalisations
-  </a>
-</article>
-
-     <article class="card card-with-gallery">
-  <div class="card-number">02</div>
-
-  <h3>Expertise minière</h3>
-
-  <p>
-    Gestion de projets, supervision des équipes et coordination
-    des opérations jusqu’à la mise en production.
-  </p>
-
-  <a href="#galerie-miniere" class="gallery-button">
-    Voir les réalisations
-  </a>
-</article>
-
-        <article class="card card-with-gallery">
-  <div class="card-number">03</div>
-
-  <h3>Rénovation</h3>
-
-  <p>
-    Projets de rénovations personnalisés intégrant l’expertise
-    en charpenterie et menuiserie. De la structure aux finitions,
-    chaque projet est adapté à vos besoins.
-  </p>
-
-  <a href="#galerie-renovation" class="gallery-button">
-    Voir les réalisations
-  </a>
-</article>
-
-        </div>
-
-      </div>
-
-    </section>
-<section class="section gallery-section" id="galerie-ebenisterie">
-
-  <div class="container">
-
-    <div class="section-heading">
-      <p>Réalisations</p>
-      <h2>Galerie Ébénisterie</h2>
-    </div>
-
-    <div class="photo-gallery">
-
-
-  <img src="images/images/Image/IMG_1850.jpeg" alt="Projet d’ébénisterie Régis Solution">
-  <img src="images/images/Image/IMG_1851.jpeg" alt="Projet d’ébénisterie Régis Solution">
-  <img src="images/images/Image/IMG_1866.jpeg" alt="Projet d’ébénisterie Régis Solution">
-  <img src="images/images/Image/IMG_1868.jpeg" alt="Projet d’ébénisterie Régis Solution">
-  <img src="images/images/Image/IMG_1877.jpeg" alt="Projet d’ébénisterie Régis Solution">
-  <img src="images/images/Image/IMG_1888.jpeg" alt="Projet d’ébénisterie Régis Solution">
-  <img src="images/images/Image/IMG_1889.jpeg" alt="Projet d’ébénisterie Régis Solution">
-  <img src="images/images/Image/IMG_1891.jpeg" alt="Projet d’ébénisterie Régis Solution">
-  <img src="images/images/Image/IMG_1892.jpeg" alt="Projet d’ébénisterie Régis Solution">
-  <img src="images/images/Image/IMG_1894.jpeg" alt="Projet d’ébénisterie Régis Solution">
-  <img src="images/images/Image/IMG_1895.jpeg" alt="Projet d’ébénisterie Régis Solution">
-  <img src="images/images/Image/IMG_1896.jpeg" alt="Projet d’ébénisterie Régis Solution">
-  <img src="images/images/Image/IMG_1897.jpeg" alt="Projet d’ébénisterie Régis Solution">
-<img src="images/images/Image/IMG_1896.jpeg" alt="Projet d’ébénisterie Régis Solution">
-<img src="images/images/Image/IMG_1897.jpeg" alt="Projet d’ébénisterie Régis Solution">
-
-<img src="images/images/Image/IMG_1901.jpeg" alt="Projet d’ébénisterie Régis Solution">
-<img src="images/images/Image/IMG_1902.jpeg" alt="Projet d’ébénisterie Régis Solution">
-<img src="images/images/Image/IMG_1903.jpeg" alt="Projet d’ébénisterie Régis Solution">
-
-</div>
-</div>
-<!-- GALERIE EXPERTISE MINIÈRE -->
-<section class="section gallery-section" id="galerie-miniere">
-
-  <div class="container">
-
-    <div class="section-heading">
-      <p>Réalisations</p>
-      <h2>Galerie Expertise minière</h2>
-    </div>
-
-    <div class="photo-gallery">
-
-      <img src="images/images/Image/IMG_1869.jpeg" alt="Réalisation en expertise minière Régis Solution">
-
-      <img src="images/images/Image/IMG_1870.jpeg" alt="Réalisation en expertise minière Régis Solution">
-
-      <img src="images/images/Image/IMG_1871.jpeg" alt="Réalisation en expertise minière Régis Solution">
-
-      <img src="images/images/Image/IMG_1907.jpeg" alt="Réalisation en expertise minière Régis Solution">
-
-      <img src="images/images/Image/IMG_1908.jpeg" alt="Réalisation en expertise minière Régis Solution">
-
-    </div>
-<!-- GALERIE RÉNOVATION -->
-<section class="section gallery-section" id="galerie-renovation">
-
-  <div class="container">
-
-    <div class="section-heading">
-      <p>Réalisations</p>
-      <h2>Galerie Rénovation</h2>
-    </div>
-
-    <div class="photo-gallery">
-
-      <img src="images/images/Image/IMG_1872.jpeg" alt="Projet de rénovation Régis Solution">
-
-      <img src="images/images/Image/IMG_1873.jpeg" alt="Projet de rénovation Régis Solution">
-
-      <img src="images/images/Image/IMG_1887.jpeg" alt="Projet de rénovation Régis Solution">
-
-      <img src="images/images/Image/IMG_1886.jpeg" alt="Projet de rénovation Régis Solution">
-
-      <img src="images/images/Image/IMG_1880.jpeg" alt="Projet de rénovation Régis Solution">
-
-      <img src="images/images/Image/IMG_1881.jpeg" alt="Projet de rénovation Régis Solution">
-
-      <img src="images/images/Image/IMG_1882.jpeg" alt="Projet de rénovation Régis Solution">
-
-      <img src="images/images/Image/IMG_1883.jpeg" alt="Projet de rénovation Régis Solution">
-
-      <img src="images/images/Image/IMG_1884.jpeg" alt="Projet de rénovation Régis Solution">
-
-      <img src="images/images/Image/IMG_1875.jpeg" alt="Projet de rénovation Régis Solution">
-
-      <img src="images/images/Image/IMG_1879.jpeg" alt="Projet de rénovation Régis Solution">
-<div class="gallery-item">
-    <img src="images/IMG_1919.jpeg" alt="Projet de rénovation réalisé par Régis" loading="lazy">
-</div>
-      <img src="images/images/Image/IMG_1878.jpeg" alt="Projet de rénovation Régis Solution">
-
-      <img src="images/images/Image/IMG_1848.jpeg" alt="Projet de rénovation Régis Solution">
-
-      <img src="images/images/Image/IMG_1913.jpeg" alt="Projet de rénovation Régis Solution">
-
-    </div>
-
-  </div>
-
-</section>
-  </div>
-
-</section>
-    </div>
-
-  </div>
-
-</section>
-    
-
-    <!-- PROJETS -->
-    <section class="section section-dark" id="projets">
-
-      <div class="container">
-
-        <div class="section-heading">
-          <p>Réalisations</p>
-          <h2>Des projets exécutés avec précision</h2>
-        </div>
-
-        <div class="project-grid">
-
-          <article class="project-card">
-            <span>01</span>
-
-            <h3>Mobilier sur mesure</h3>
-
-            <p>
-              Vanités, armoires, meubles et agencements personnalisés.
-            </p>
-          </article>
-
-          <article class="project-card">
-            <span>02</span>
-
-            <h3>Gestion minière</h3>
-
-            <p>
-              Planification, supervision et coordination des équipes
-              sur le terrain.
-            </p>
-          </article>
-
-          <article class="project-card">
-            <span>03</span>
-
-            <h3>Rénovation résidentielle</h3>
-
-            <p>
-              Travaux structuraux, menuiserie et finitions personnalisées.
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- À PROPOS -->
-    <section class="section" id="apropos">
-
-      <div class="container about-grid">
-
-        <div>
-          <p class="eyebrow">À propos</p>
-
-          <h2>
-            Une expertise bâtie sur l’expérience
-          </h2>
-        </div>
-
-        <div class="about-text">
-
-          <p>
-            Régis Solution met à profit une expérience diversifiée
-            en ébénisterie, rénovation, charpenterie-menuiserie
-            et gestion de projets miniers.
-          </p>
-
-          <p>
-            Chaque mandat est réalisé avec méthode, précision
-            et engagement.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section contact-section" id="contact">
-
-      <div class="container contact-content">
-
-        <div>
-          <p class="eyebrow">Contact</p>
-
-          <h2>
-            Discutons de votre projet
-          </h2>
-        </div>
 
         <a
-          class="contact-button"
-          href="mailto:info@regissolution.com"
+          href="#expertises"
+          class="hero-button"
         >
-          Écrire à Régis Solution
+          DÉCOUVRIR NOS EXPERTISES
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         EXPERTISES
+    ============================== -->
+
+    <section
+      class="expertises"
+      id="expertises"
+    >
+
+      <div class="section-container">
+
+        <h2 class="section-title">
+          NOS EXPERTISES
+        </h2>
+
+
+        <div class="expertise-grid">
+
+
+          <article class="expertise-card">
+
+            <h3>
+              ÉBÉNISTERIE
+            </h3>
+
+            <div class="card-line"></div>
+
+            <p>
+              Mobilier, armoires et agencements
+              conçus et fabriqués sur mesure.
+              Du design à la réalisation,
+              chaque pièce est unique.
+            </p>
+
+          </article>
+
+
+
+          <article class="expertise-card">
+
+            <h3>
+              EXPERTISE MINIÈRE
+            </h3>
+
+            <div class="card-line"></div>
+
+            <p>
+              Gestion de projets miniers
+              du développement
+              à la mise en production.
+            </p>
+
+          </article>
+
+
+
+          <article class="expertise-card">
+
+            <h3>
+              RÉNOVATION
+            </h3>
+
+            <div class="card-line"></div>
+
+            <p>
+              Projets de rénovation personnalisés,
+              de la structure aux finitions,
+              adaptés à vos besoins.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         RÉALISATIONS
+    ============================== -->
+
+    <section
+      class="realisations"
+      id="realisations"
+    >
+
+      <div class="section-container">
+
+        <h2 class="section-title">
+          RÉALISATIONS
+        </h2>
+
+        <p>
+          Découvrez une sélection de projets réalisés
+          en ébénisterie, rénovation et construction.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         À PROPOS
+    ============================== -->
+
+    <section
+      class="apropos"
+      id="apropos"
+    >
+
+      <div class="apropos-content">
+
+        <h2 class="section-title">
+          À PROPOS
+        </h2>
+
+        <p>
+          Régis Solution offre une approche professionnelle
+          axée sur la qualité, la précision et la réalisation
+          de projets adaptés aux besoins de chaque client.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         CONTACT
+    ============================== -->
+
+    <section
+      class="contact"
+      id="contact"
+    >
+
+      <div class="section-container">
+
+        <h2 class="section-title">
+          CONTACT
+        </h2>
+
+        <p>
+          Vous avez un projet?
+          Communiquez avec Régis Solution.
+        </p>
+
+        <a
+          href="mailto:info@regissolution.com"
+          class="contact-button"
+        >
+          NOUS CONTACTER
         </a>
 
       </div>
@@ -411,23 +899,54 @@
 
   </main>
 
-  <footer class="site-footer">
 
-    <div class="container footer-content">
 
-      <p>
-        © 2026 Régis Solution. Tous droits réservés.
-      </p>
+  <!-- ==============================
+       FOOTER
+  ============================== -->
 
-      <a href="#accueil">
-        Retour en haut
-      </a>
+  <footer>
 
-    </div>
+    © 2026 RÉGIS SOLUTION
 
   </footer>
 
-  <script src="./style.js"></script>
+
+
+  <!-- ==============================
+       MENU MOBILE
+  ============================== -->
+
+  <script>
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const navMenu =
+      document.getElementById("navMenu");
+
+
+    menuToggle.addEventListener("click", function () {
+
+      navMenu.classList.toggle("active");
+
+    });
+
+
+    document
+      .querySelectorAll(".nav a")
+      .forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+          navMenu.classList.remove("active");
+
+        });
+
+      });
+
+  </script>
+
 
 </body>
 </html>
