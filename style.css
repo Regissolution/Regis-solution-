@@ -1041,3 +1041,114 @@ button {
   }
 
 }
+/* =====================================================
+   GALERIE ÉBÉNISTERIE
+===================================================== */
+
+.gallery-section {
+  background: #080808;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gallery-button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 11px 18px;
+
+  border: 1px solid #c9973f;
+  color: #e2b45e;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  transition: 0.25s ease;
+}
+
+.gallery-button:hover {
+  background: #c9973f;
+  color: #050505;
+}
+
+
+/* GRILLE DES PHOTOS */
+
+.photo-gallery {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.photo-gallery img {
+  width: 100%;
+  height: 300px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border: 1px solid rgba(201, 151, 63, 0.20);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.photo-gallery img:hover {
+  transform: scale(1.015);
+  border-color: #c9973f;
+}
+
+
+/* TABLETTE */
+
+@media screen and (max-width: 850px) {
+
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .photo-gallery img {
+    height: 230px;
+  }
+
+}
+
+
+/* IPHONE */
+
+@media screen and (max-width: 560px) {
+
+  .gallery-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .photo-gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .photo-gallery img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+
+    object-fit: contain;
+
+    background: #050505;
+  }
+
+  .gallery-button {
+    width: 100%;
+
+    text-align: center;
+
+    margin-top: 24px;
+    padding: 14px 16px;
+  }
+
+}
