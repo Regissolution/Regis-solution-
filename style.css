@@ -1152,3 +1152,313 @@ button {
   }
 
 }
+/* =====================================================
+   NOUVEAU LOGO RÉGIS SOLUTION — STYLE 2
+===================================================== */
+
+.rs2-logo {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+/* Barre verticale du R */
+.rs2-logo::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: 13%;
+  height: 68%;
+
+  background: linear-gradient(
+    180deg,
+    #e6b85a,
+    #c88f2f
+  );
+}
+
+/* Partie supérieure arrondie du R */
+.rs2-top {
+  position: absolute;
+  left: 10%;
+  top: 8%;
+
+  width: 72%;
+  height: 48%;
+
+  border-top: 10px solid #d9a13d;
+  border-right: 10px solid #d9a13d;
+  border-bottom: 10px solid #d9a13d;
+
+  border-radius: 0 55% 55% 0;
+}
+
+/* Trait intérieur */
+.rs2-middle {
+  position: absolute;
+  left: 20%;
+  top: 40%;
+
+  width: 45%;
+  height: 10%;
+
+  background: linear-gradient(
+    90deg,
+    #e6b85a,
+    #c88f2f
+  );
+}
+
+/* Jambe diagonale du R */
+.rs2-leg {
+  position: absolute;
+  left: 52%;
+  top: 52%;
+
+  width: 13%;
+  height: 50%;
+
+  background: linear-gradient(
+    180deg,
+    #e6b85a,
+    #c88f2f
+  );
+
+  transform: rotate(-43deg);
+  transform-origin: top center;
+}
+
+
+/* =====================================================
+   PETIT LOGO — EN HAUT À GAUCHE
+===================================================== */
+
+.rs2-small {
+  width: 52px;
+  height: 52px;
+}
+
+.rs2-small .rs2-top {
+  border-width: 5px;
+}
+
+
+/* =====================================================
+   GRAND LOGO — CENTRE DE LA PAGE D’ACCUEIL
+===================================================== */
+
+.rs2-large {
+  width: 125px;
+  height: 125px;
+  margin-bottom: 30px;
+}
+
+.rs2-large .rs2-top {
+  border-width: 10px;
+}
+
+
+/* =====================================================
+   AJUSTEMENT IPHONE
+===================================================== */
+
+@media screen and (max-width: 850px) {
+
+  .rs2-small {
+    width: 44px;
+    height: 44px;
+  }
+
+  .rs2-small .rs2-top {
+    border-width: 4px;
+  }
+
+  .rs2-large {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 30px;
+  }
+
+  .rs2-large .rs2-top {
+    border-width: 9px;
+  }
+
+}
+
+
+/* =====================================================
+   PETITS IPHONE
+===================================================== */
+
+@media screen and (max-width: 390px) {
+
+  .rs2-small {
+    width: 40px;
+    height: 40px;
+  }
+
+  .rs2-large {
+    width: 100px;
+    height: 100px;
+  }
+
+  .rs2-large .rs2-top {
+    border-width: 8px;
+  }
+
+}
+/* =====================================================
+   NOUVEAU LOGO RÉGIS SOLUTION — STYLE 2
+===================================================== */
+
+.rs2-logo {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+/* Barre verticale du R */
+.rs2-logo::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: 13%;
+  height: 68%;
+
+  background: linear-gradient(
+    180deg,
+    #e6b85a,
+    #c88f2f
+  );
+}
+
+/* Partie supérieure arrondie du R */
+.rs2-top {
+  position: absolute;
+  left: 10%;
+  top: 8%;
+
+  width: 72%;
+  height: 48%;
+
+  border-top: 10px solid #d9a13d;
+  border-right: 10px solid #d9a13d;
+  border-bottom: 10px solid #d9a13d;
+
+  border-radius: 0 55% 55% 0;
+}
+
+/* Trait intérieur */
+.rs2-middle {
+  position: absolute;
+  left: 20%;
+  top: 40%;
+
+  width: 45%;
+  height: 10%;
+
+  background: linear-gradient(
+    90deg,
+    #e6b85a,
+    #c88f2f
+  );
+}
+
+/* Jambe diagonale du R */
+.rs2-leg {
+  position: absolute;
+  left: 52%;
+  top: 52%;
+
+  width: 13%;
+  height: 50%;
+
+  background: linear-gradient(
+    180deg,
+    #e6b85a,
+    #c88f2f
+  );
+
+  transform: rotate(-43deg);
+  transform-origin: top center;
+}
+
+
+/* =====================================================
+   PETIT LOGO — EN HAUT À GAUCHE
+===================================================== */
+
+.rs2-small {
+  width: 52px;
+  height: 52px;
+}
+
+.rs2-small .rs2-top {
+  border-width: 5px;
+}
+
+
+/* =====================================================
+   GRAND LOGO — CENTRE DE LA PAGE D’ACCUEIL
+===================================================== */
+
+.rs2-large {
+  width: 125px;
+  height: 125px;
+  margin-bottom: 30px;
+}
+
+.rs2-large .rs2-top {
+  border-width: 10px;
+}
+
+
+/* =====================================================
+   AJUSTEMENT IPHONE
+===================================================== */
+
+@media screen and (max-width: 850px) {
+
+  .rs2-small {
+    width: 44px;
+    height: 44px;
+  }
+
+  .rs2-small .rs2-top {
+    border-width: 4px;
+  }
+
+  .rs2-large {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 30px;
+  }
+
+  .rs2-large .rs2-top {
+    border-width: 9px;
+  }
+
+}
+
+
+/* =====================================================
+   PETITS IPHONE
+===================================================== */
+
+@media screen and (max-width: 390px) {
+
+  .rs2-small {
+    width: 40px;
+    height: 40px;
+  }
+
+  .rs2-large {
+    width: 100px;
+    height: 100px;
+  }
+
+  .rs2-large .rs2-top {
+    border-width: 8px;
+  }
+
+}
