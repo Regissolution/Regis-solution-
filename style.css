@@ -1484,3 +1484,53 @@ button {
     height: 48px;
   }
 }
+/* ===================================
+   TEMPORAIRE - ENLEVER TOUS LES LOGOS R
+   =================================== */
+
+.logo-regis,
+.hero-logo {
+    display: none !important;
+}
+
+/* Logo texte dans le header */
+.logo-regis-texte {
+    display: flex !important;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-regis-texte .regis {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.logo-regis-texte .solution {
+    color: #d6a23d;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+/* iPhone */
+@media (max-width: 768px) {
+
+    .logo-regis,
+    .hero-logo {
+        display: none !important;
+    }
+
+    .logo-regis-texte .regis {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .logo-regis-texte .solution {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+}
